@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Ember Starter Kit</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <script type="text/x-handlebars" data-template-name="documents">
+    <section id="documents-app">
+      Documents
+    </section>
+
+    <!-- value=newTitle its important to be without quotes -->
+    {{input type="text" id="new-doc-title" placeholder="Doc Title?" value=newTitle action="createDocument"}}
+    {{input type="text" id="new-doc-text" placeholder="Doc Text?" value=newText action="createDocument"}}
+
+    <ul id="document-list">
+      {{#each}}
+        <li>
+          <label><b>{{title}}</b> - {{text}}</label>
+        </li>
+      {{/each}}
+    </ul>
+
+    <footer id="info">
+      <p>Documents</p>
+    </footer>
+  </script>
+
+  <script src="js/libs/jquery-1.9.1.js"></script>
+  <script src="js/libs/handlebars-1.0.0.js"></script>
+  <script src="js/libs/ember-1.0.0.js"></script>
+  <script src="js/libs/ember-data-1.0.0-beta.3.js"></script>
+  <script src="js/emberjs/app.js"></script>
+  <script src="js/emberjs/router.js"></script>
+  <script src="js/emberjs/controllers/application.js"></script>
+  <script src="js/emberjs/views/application.js"></script>
+  <script src="js/emberjs/models/document.js"></script>
+
+</body>
+</html>
